@@ -1,1 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>AL-JAMIATUL ISMAILIYA LILBANAT</title>
+
+<style>
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#f5f7f8;
+    color:#222;
+}
+
+header{
+    background:#0b5d3b;
+    color:white;
+    text-align:center;
+    padding:30px 15px;
+}
+
+header h1{
+    font-size:28px;
+}
+
+header p{
+    margin-top:8px;
+    font-size:15px;
+}
+
+.container{
+    max-width:900px;
+    margin:30px auto;
+    padding:15px;
+}
+
+.menu{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:15px;
+}
+
+.menu button{
+    border:none;
+    background:white;
+    padding:25px 10px;
+    border-radius:15px;
+    box-shadow:0 3px 12px rgba(0,0,0,.12);
+    font-size:17px;
+    font-weight:bold;
+    cursor:pointer;
+    color:#0b5d3b;
+}
+
+.menu button:hover{
+    background:#0b5d3b;
+    color:white;
+}
+
+.page{
+    display:none;
+    background:white;
+    padding:25px;
+    margin-top:20px;
+    border-radius:15px;
+    box-shadow:0 3px 12px rgba(0,0,0,.12);
+}
+
+.page h2{
+    color:#0b5d3b;
+    margin-bottom:15px;
+}
+
+.back{
+    background:#0b5d3b;
+    color:white;
+    border:none;
+    padding:10px 18px;
+    border-radius:8px;
+    cursor:pointer;
+    margin-top:20px;
+}
+
+input, select, textarea{
+    width:100%;
+    padding:12px;
+    margin:8px 0 15px;
+    border:1px solid #ccc;
+    border-radius:8px;
+}
+
+.submit{
+    background:#0b5d3b;
+    color:white;
+    border:none;
+    padding:12px 20px;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+.info{
+    background:#f1f8f5;
+    padding:15px;
+    border-radius:10px;
+    margin:10px 0;
+}
+
+ul{
+    margin-left:20px;
+    line-height:2;
+}
+
+footer{
+    text-align:center;
+    margin-top:40px;
+    padding:20px;
+    background:#0b5d3b;
+    color:white;
+}
+
+@media(max-width:600px){
+    .menu{
+        grid-template-columns:1fr;
+    }
+
+    header h1{
+        font-size:22px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>AL-JAMIATUL ISMAILIYA LILBANAT</h1>
+    <p>Welcome to our School Website</p>
+</header>
+
+<div class="container">
+
+<!-- MAIN MENU -->
+
+<div id="home" class="menu">
+
+<button onclick="showPage('events')">
+📅 Events
+</button>
+
+<button onclick="showPage('result')">
+📊 Result
+</button>
+
+<button onclick="showPage('admission')">
+📝 Admission Form
+</button>
+
+<button onclick="showPage('study')">
+📚 Kaunsi Padhai Hoti Hai
+</button>
+
+<button onclick="showPage('fees')">
+💰 Fees Information
+</button>
+
+<button onclick="showPage('contact')">
+📞 Contact Us
+</button>
+
+<button onclick="showPage('links')">
+🔗 Important Links
+</button>
+
+</div>
+
+
+<!-- EVENTS -->
+
+<div id="events" class="page">
+
+<h2>📅 School Events</h2>
+
+<div class="info">
+<strong>Annual Function</strong>
+<p>School annual function ki information yahan add ki jayegi.</p>
+</div>
+
+<div class="info">
+<strong>Sports Day</strong>
+<p>Sports Day ki date aur details yahan add ki jayengi.</p>
+</div>
+
+<div class="info">
+<strong>School Programme</strong>
+<p>Latest school programmes ki information yahan milegi.</p>
+</div>
+
+<button class="back" onclick="goHome()">← Back</button>
+
+</div>
+
+
+<!-- RESULT -->
+
+<div id="result" class="page">
+
+<h2>📊 Check Result</h2>
+
+<p>Apna Roll Number enter karein:</p>
+
+<input type="text" id="roll" placeholder="Enter Roll Number">
+
+<button class="submit" onclick="checkResult()">
+Check Result
+</button>
+
+<div id="resultBox"></div>
+
+<button class="back" onclick="goHome()">← Back</button>
+
+</div>
+
+
+<!-- ADMISSION -->
+
+<div id="admission" class="page">
+
+<h2>📝 Admission Form</h2>
+
+<label>Student Name</label>
+<input type="text" placeholder="Enter student name">
+
+<label>Father's / Guardian's Name</label>
+<input type="text" placeholder="Enter father's name">
+
+<label>Class</label>
+<select>
+<option>Select Class</option>
+<option>Nursery</option>
+<option>LKG</option>
+<option>UKG</option>
+<option>Class 1</option>
+<option>Class 2</option>
+<option>Class 3</option>
+<option>Class 4</option>
+<option>Class 5</option>
+<option>Class 6</option>
+<option>Class 7</option>
+<option>Class 8</option>
+<option>Class 9</option>
+<option>Class 10</option>
+<option>Class 11</option>
+<option>Class 12</option>
+</select>
+
+<label>Mobile Number</label>
+<input type="tel" placeholder="Enter mobile number">
+
+<label>Address</label>
+<textarea placeholder="Enter address"></textarea>
+
+<button class="submit" onclick="alert('Admission form submitted successfully!')">
+Submit Application
+</button>
+
+<button class="back" onclick="goHome()">← Back</button>
+
+</div>
+
+
+<!-- STUDY -->
+
+<div id="study" class="page">
+
+<h2>📚 Kaunsi Padhai Hoti Hai</h2>
+
+<div class="info">
+<h3>School Education</h3>
+<p>Yahan school mein padhai jaane wali classes aur subjects ki details add ki jayengi.</p>
+</div>
+
+<ul>
+<li>Primary Education</li>
+<li>Middle School Education</li>
+<li>Secondary Education</li>
+<li>Higher Secondary Education</li>
+<li>Islamic / Religious Education</li>
+</ul>
+
+<button class="back" onclick="goHome()">← Back</button>
+
+</div>
+
+
+<!-- FEES -->
+
+<div id="fees" class="page">
+
+<h2>💰 Fees Information</h2>
+
+<div class="info">
+<strong>Admission Fee</strong>
+<p>₹ ______</p>
+</div>
+
+<div class="info">
+<strong>Monthly Fee</strong>
+<p>₹ ______</p>
+</div>
+
+<div class="info">
+<strong>Annual Fee</strong>
+<p>₹ ______</p>
+</div>
+
+<p>
+Exact fees aur payment information school office se confirm karein.
+</p>
+
+<button class="back" onclick="goHome()">← Back</button>
+
+</div>
+
+
+<!-- CONTACT -->
+
+<div id="contact" class="page">
+
+<h2>📞 Contact Us</h2>
+
+<div class="info">
+<strong>School Name</strong>
+<p>AL-JAMIATUL ISMAILIYA LILBANAT</p>
+</div>
+
+<div class="info">
+<strong>Address</strong>
+<p>School ka complete address yahan add karein.</p>
+</div>
+
+<div class="info">
+<strong>Phone</strong>
+<p>School ka phone number yahan add karein.</p>
+</div>
+
+<div class="info">
+<strong>Email</strong>
+<p>School ka email yahan add karein.</p>
+</div>
+
+<button class="back" onclick="goHome()">← Back</button>
+
+</div>
+
+
+<!-- LINKS -->
+
+<div id="links" class="page">
+
+<h2>🔗 Important Links</h2>
+
+<ul>
+<li><a href="#" target="_blank">School Notice Link</a></li>
+<li><a href="#" target="_blank">Online Admission Link</a></li>
+<li><a href="#" target="_blank">Student Portal</a></li>
+<li><a href="#" target="_blank">Parent Portal</a></li>
+</ul>
+
+<button class="back" onclick="goHome()">← Back</button>
+
+</div>
+
+</div>
+
+
+<footer>
+© 2026 AL-JAMIATUL ISMAILIYA LILBANAT
+</footer>
+
+
+<script>
+
+function showPage(pageId){
+
+    document.getElementById("home").style.display="none";
+
+    let pages=document.querySelectorAll(".page");
+
+    pages.forEach(function(page){
+        page.style.display="none";
+    });
+
+    document.getElementById(pageId).style.display="block";
+
+    window.scrollTo(0,0);
+}
+
+
+function goHome(){
+
+    let pages=document.querySelectorAll(".page");
+
+    pages.forEach(function(page){
+        page.style.display="none";
+    });
+
+    document.getElementById("home").style.display="grid";
+
+    window.scrollTo(0,0);
+}
+
+
+function checkResult(){
+
+    let roll=document.getElementById("roll").value;
+
+    let box=document.getElementById("resultBox");
+
+    if(roll==""){
+        box.innerHTML=
+        "<p style='color:red;margin-top:15px;'>Please enter Roll Number.</p>";
+        return;
+    }
+
+    /*
+    Example result.
+    Baad mein yahan actual students ke results add kiye ja sakte hain.
+    */
+
+    if(roll=="1001"){
+
+        box.innerHTML=`
+        <div class="info">
+        <h3>Result</h3>
+        <p><strong>Student:</strong> Example Student</p>
+        <p><strong>Roll No:</strong> 1001</p>
+        <p><strong>Status:</strong> Passed</p>
+        </div>
+        `;
+
+    }else{
+
+        box.innerHTML=
+        "<p style='color:red;margin-top:15px;'>Result not found. Please check your Roll Number.</p>";
+
+    }
+}
+
+</script>
+
+</body>
+</html>
