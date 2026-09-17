@@ -8,35 +8,35 @@
 
 <style>
 *{
-    box-sizing:border-box;
     margin:0;
     padding:0;
-    font-family:Arial, sans-serif;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
 }
 
 body{
-    background:#f5f7f8;
+    background:#f5f7f6;
     color:#222;
 }
 
-header{
-    background:#0b5d3b;
+.header{
+    background:#075b3b;
     color:white;
     text-align:center;
-    padding:30px 15px;
+    padding:35px 15px;
 }
 
-header h1{
+.header h1{
     font-size:28px;
+    margin-bottom:8px;
 }
 
-header p{
-    margin-top:8px;
+.header p{
     font-size:15px;
 }
 
 .container{
-    max-width:900px;
+    max-width:850px;
     margin:30px auto;
     padding:15px;
 }
@@ -44,23 +44,25 @@ header p{
 .menu{
     display:grid;
     grid-template-columns:repeat(2,1fr);
-    gap:15px;
+    gap:18px;
 }
 
-.menu button{
-    border:none;
+.card{
     background:white;
-    padding:25px 10px;
+    border:0;
     border-radius:15px;
-    box-shadow:0 3px 12px rgba(0,0,0,.12);
-    font-size:17px;
+    padding:28px 15px;
+    font-size:18px;
     font-weight:bold;
+    color:#075b3b;
+    box-shadow:0 4px 12px rgba(0,0,0,.12);
     cursor:pointer;
-    color:#0b5d3b;
+    transition:.2s;
 }
 
-.menu button:hover{
-    background:#0b5d3b;
+.card:hover{
+    transform:translateY(-3px);
+    background:#075b3b;
     color:white;
 }
 
@@ -68,27 +70,38 @@ header p{
     display:none;
     background:white;
     padding:25px;
-    margin-top:20px;
     border-radius:15px;
-    box-shadow:0 3px 12px rgba(0,0,0,.12);
+    box-shadow:0 4px 12px rgba(0,0,0,.12);
 }
 
 .page h2{
-    color:#0b5d3b;
-    margin-bottom:15px;
+    color:#075b3b;
+    margin-bottom:18px;
+}
+
+.page p{
+    line-height:1.7;
+    margin-bottom:12px;
 }
 
 .back{
-    background:#0b5d3b;
-    color:white;
-    border:none;
-    padding:10px 18px;
-    border-radius:8px;
-    cursor:pointer;
     margin-top:20px;
+    padding:11px 20px;
+    border:0;
+    border-radius:8px;
+    background:#075b3b;
+    color:white;
+    cursor:pointer;
 }
 
-input, select, textarea{
+.box{
+    background:#f0f7f4;
+    padding:15px;
+    border-radius:10px;
+    margin:10px 0;
+}
+
+input,select,textarea{
     width:100%;
     padding:12px;
     margin:8px 0 15px;
@@ -97,31 +110,19 @@ input, select, textarea{
 }
 
 .submit{
-    background:#0b5d3b;
-    color:white;
-    border:none;
     padding:12px 20px;
+    border:0;
     border-radius:8px;
+    background:#075b3b;
+    color:white;
     cursor:pointer;
 }
 
-.info{
-    background:#f1f8f5;
-    padding:15px;
-    border-radius:10px;
-    margin:10px 0;
-}
-
-ul{
-    margin-left:20px;
-    line-height:2;
-}
-
 footer{
-    text-align:center;
     margin-top:40px;
     padding:20px;
-    background:#0b5d3b;
+    text-align:center;
+    background:#075b3b;
     color:white;
 }
 
@@ -130,7 +131,7 @@ footer{
         grid-template-columns:1fr;
     }
 
-    header h1{
+    .header h1{
         font-size:22px;
     }
 }
@@ -139,43 +140,43 @@ footer{
 
 <body>
 
-<header>
+<div class="header">
     <h1>AL-JAMIATUL ISMAILIYA LILBANAT</h1>
-    <p>Welcome to our School Website</p>
-</header>
+    <p>Official School Website</p>
+</div>
 
 <div class="container">
 
-<!-- MAIN MENU -->
+<!-- HOME MENU -->
 
 <div id="home" class="menu">
 
-<button onclick="showPage('events')">
+<button class="card" onclick="openPage('events')">
 📅 Events
 </button>
 
-<button onclick="showPage('result')">
+<button class="card" onclick="openPage('result')">
 📊 Result
 </button>
 
-<button onclick="showPage('admission')">
+<button class="card" onclick="openPage('admission')">
 📝 Admission Form
 </button>
 
-<button onclick="showPage('study')">
-📚 Kaunsi Padhai Hoti Hai
+<button class="card" onclick="openPage('courses')">
+📚 Courses
 </button>
 
-<button onclick="showPage('fees')">
-💰 Fees Information
+<button class="card" onclick="openPage('fees')">
+💰 Fees Info
 </button>
 
-<button onclick="showPage('contact')">
+<button class="card" onclick="openPage('contact')">
 📞 Contact Us
 </button>
 
-<button onclick="showPage('links')">
-🔗 Important Links
+<button class="card" onclick="openPage('links')">
+🔗 Links
 </button>
 
 </div>
@@ -185,24 +186,14 @@ footer{
 
 <div id="events" class="page">
 
-<h2>📅 School Events</h2>
+<h2>📅 Events</h2>
 
-<div class="info">
-<strong>Annual Function</strong>
-<p>School annual function ki information yahan add ki jayegi.</p>
+<div class="box">
+<strong>School Events</strong>
+<p>Latest school events and programmes will be displayed here.</p>
 </div>
 
-<div class="info">
-<strong>Sports Day</strong>
-<p>Sports Day ki date aur details yahan add ki jayengi.</p>
-</div>
-
-<div class="info">
-<strong>School Programme</strong>
-<p>Latest school programmes ki information yahan milegi.</p>
-</div>
-
-<button class="back" onclick="goHome()">← Back</button>
+<button class="back" onclick="home()">← Back</button>
 
 </div>
 
@@ -211,11 +202,11 @@ footer{
 
 <div id="result" class="page">
 
-<h2>📊 Check Result</h2>
+<h2>📊 Result</h2>
 
-<p>Apna Roll Number enter karein:</p>
+<p>Enter your Roll Number to check your result.</p>
 
-<input type="text" id="roll" placeholder="Enter Roll Number">
+<input type="text" id="roll" placeholder="Roll Number">
 
 <button class="submit" onclick="checkResult()">
 Check Result
@@ -223,7 +214,7 @@ Check Result
 
 <div id="resultBox"></div>
 
-<button class="back" onclick="goHome()">← Back</button>
+<button class="back" onclick="home()">← Back</button>
 
 </div>
 
@@ -235,10 +226,10 @@ Check Result
 <h2>📝 Admission Form</h2>
 
 <label>Student Name</label>
-<input type="text" placeholder="Enter student name">
+<input type="text" placeholder="Enter Student Name">
 
-<label>Father's / Guardian's Name</label>
-<input type="text" placeholder="Enter father's name">
+<label>Father / Guardian Name</label>
+<input type="text" placeholder="Enter Father / Guardian Name">
 
 <label>Class</label>
 <select>
@@ -261,40 +252,38 @@ Check Result
 </select>
 
 <label>Mobile Number</label>
-<input type="tel" placeholder="Enter mobile number">
+<input type="tel" placeholder="Mobile Number">
 
 <label>Address</label>
-<textarea placeholder="Enter address"></textarea>
+<textarea placeholder="Address"></textarea>
 
-<button class="submit" onclick="alert('Admission form submitted successfully!')">
-Submit Application
+<button class="submit"
+onclick="alert('Your admission form has been submitted.')">
+Submit
 </button>
 
-<button class="back" onclick="goHome()">← Back</button>
+<button class="back" onclick="home()">← Back</button>
 
 </div>
 
 
-<!-- STUDY -->
+<!-- COURSES -->
 
-<div id="study" class="page">
+<div id="courses" class="page">
 
-<h2>📚 Kaunsi Padhai Hoti Hai</h2>
+<h2>📚 Courses</h2>
 
-<div class="info">
-<h3>School Education</h3>
-<p>Yahan school mein padhai jaane wali classes aur subjects ki details add ki jayengi.</p>
+<div class="box">
+<strong>School Education</strong>
+<p>Classes and subjects offered by the school will be listed here.</p>
 </div>
 
-<ul>
-<li>Primary Education</li>
-<li>Middle School Education</li>
-<li>Secondary Education</li>
-<li>Higher Secondary Education</li>
-<li>Islamic / Religious Education</li>
-</ul>
+<div class="box">
+<strong>Islamic Education</strong>
+<p>Islamic education details will be displayed here.</p>
+</div>
 
-<button class="back" onclick="goHome()">← Back</button>
+<button class="back" onclick="home()">← Back</button>
 
 </div>
 
@@ -305,26 +294,22 @@ Submit Application
 
 <h2>💰 Fees Information</h2>
 
-<div class="info">
+<div class="box">
 <strong>Admission Fee</strong>
-<p>₹ ______</p>
+<p>Information will be updated by the school.</p>
 </div>
 
-<div class="info">
+<div class="box">
 <strong>Monthly Fee</strong>
-<p>₹ ______</p>
+<p>Information will be updated by the school.</p>
 </div>
 
-<div class="info">
+<div class="box">
 <strong>Annual Fee</strong>
-<p>₹ ______</p>
+<p>Information will be updated by the school.</p>
 </div>
 
-<p>
-Exact fees aur payment information school office se confirm karein.
-</p>
-
-<button class="back" onclick="goHome()">← Back</button>
+<button class="back" onclick="home()">← Back</button>
 
 </div>
 
@@ -335,27 +320,27 @@ Exact fees aur payment information school office se confirm karein.
 
 <h2>📞 Contact Us</h2>
 
-<div class="info">
-<strong>School Name</strong>
+<div class="box">
+<strong>School</strong>
 <p>AL-JAMIATUL ISMAILIYA LILBANAT</p>
 </div>
 
-<div class="info">
+<div class="box">
 <strong>Address</strong>
-<p>School ka complete address yahan add karein.</p>
+<p>School address will be added here.</p>
 </div>
 
-<div class="info">
+<div class="box">
 <strong>Phone</strong>
-<p>School ka phone number yahan add karein.</p>
+<p>School phone number will be added here.</p>
 </div>
 
-<div class="info">
+<div class="box">
 <strong>Email</strong>
-<p>School ka email yahan add karein.</p>
+<p>School email will be added here.</p>
 </div>
 
-<button class="back" onclick="goHome()">← Back</button>
+<button class="back" onclick="home()">← Back</button>
 
 </div>
 
@@ -366,14 +351,19 @@ Exact fees aur payment information school office se confirm karein.
 
 <h2>🔗 Important Links</h2>
 
-<ul>
-<li><a href="#" target="_blank">School Notice Link</a></li>
-<li><a href="#" target="_blank">Online Admission Link</a></li>
-<li><a href="#" target="_blank">Student Portal</a></li>
-<li><a href="#" target="_blank">Parent Portal</a></li>
-</ul>
+<div class="box">
+<a href="#" target="_blank">Online Admission</a>
+</div>
 
-<button class="back" onclick="goHome()">← Back</button>
+<div class="box">
+<a href="#" target="_blank">Student Portal</a>
+</div>
+
+<div class="box">
+<a href="#" target="_blank">School Notice</a>
+</div>
+
+<button class="back" onclick="home()">← Back</button>
 
 </div>
 
@@ -387,7 +377,7 @@ Exact fees aur payment information school office se confirm karein.
 
 <script>
 
-function showPage(pageId){
+function openPage(id){
 
     document.getElementById("home").style.display="none";
 
@@ -397,13 +387,12 @@ function showPage(pageId){
         page.style.display="none";
     });
 
-    document.getElementById(pageId).style.display="block";
+    document.getElementById(id).style.display="block";
 
     window.scrollTo(0,0);
 }
 
-
-function goHome(){
+function home(){
 
     let pages=document.querySelectorAll(".page");
 
@@ -416,41 +405,21 @@ function goHome(){
     window.scrollTo(0,0);
 }
 
-
 function checkResult(){
 
     let roll=document.getElementById("roll").value;
-
     let box=document.getElementById("resultBox");
 
     if(roll==""){
         box.innerHTML=
-        "<p style='color:red;margin-top:15px;'>Please enter Roll Number.</p>";
+        "<div class='box'>Please enter Roll Number.</div>";
         return;
     }
 
-    /*
-    Example result.
-    Baad mein yahan actual students ke results add kiye ja sakte hain.
-    */
-
-    if(roll=="1001"){
-
-        box.innerHTML=`
-        <div class="info">
-        <h3>Result</h3>
-        <p><strong>Student:</strong> Example Student</p>
-        <p><strong>Roll No:</strong> 1001</p>
-        <p><strong>Status:</strong> Passed</p>
-        </div>
-        `;
-
-    }else{
-
-        box.innerHTML=
-        "<p style='color:red;margin-top:15px;'>Result not found. Please check your Roll Number.</p>";
-
-    }
+    box.innerHTML=
+    "<div class='box'>Result for Roll Number <strong>"
+    + roll +
+    "</strong> will be displayed here.</div>";
 }
 
 </script>
