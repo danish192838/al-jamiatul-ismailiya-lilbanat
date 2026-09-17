@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AL-JAMIATUL ISMAILIYA LILBANAT</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+  <div class="logo-area">
+    <img src="logo.jpg" alt="School Logo">
+    <div>
+      <h1>AL-JAMIATUL ISMAILIYA LILBANAT</h1>
+      <p>Official School Website</p>
+    </div>
+  </div>
+
+  <button onclick="toggleMenu()">☰</button>
+
+  <nav id="menu">
+    <a href="#home">Home</a>
+    <a href="#result">Result</a>
+    <a href="#fees">Fees Info</a>
+    <a href="#admission">Admission Form</a>
+    <a href="#courses">Courses</a>
+    <a href="#contact">Contact Us</a>
+  </nav>
+</header>
+
+<section id="home" class="hero">
+  <div>
+    <span>WELCOME</span>
+    <h2>AL-JAMIATUL<br>ISMAILIYA LILBANAT</h2>
+    <p>Knowledge • Character • Education • Future</p>
+
+    <a href="#admission" class="btn">Admission Form</a>
+    <a href="#result" class="btn second">Check Result</a>
+  </div>
+</section>
+
+<section class="options">
+
+  <a href="#result">
+    <b>📊</b>
+    <h3>Result</h3>
+    <p>Check Student Result</p>
+  </a>
+
+  <a href="#fees">
+    <b>💰</b>
+    <h3>Fees Info</h3>
+    <p>View Fee Information</p>
+  </a>
+
+  <a href="#admission">
+    <b>📝</b>
+    <h3>Admission</h3>
+    <p>Apply Online</p>
+  </a>
+
+  <a href="#courses">
+    <b>📚</b>
+    <h3>Courses</h3>
+    <p>Explore Courses</p>
+  </a>
+
+  <a href="#contact">
+    <b>📞</b>
+    <h3>Contact Us</h3>
+    <p>Get In Touch</p>
+  </a>
+
+</section>
+
+<section id="result" class="section">
+  <h2>📊 Student Result</h2>
+  <p>Enter Roll Number to check result</p>
+
+  <div class="card">
+    <input type="text" id="roll" placeholder="Enter Roll Number">
+    <button onclick="checkResult()">Search Result</button>
+
+    <div id="resultBox"></div>
+  </div>
+</section>
+
+<section id="fees" class="section light">
+  <h2>💰 Fees Information</h2>
+  <p>School Fee Structure</p>
+
+  <div class="table">
+    <table>
+      <tr>
+        <th>Class / Course</th>
+        <th>Admission Fee</th>
+        <th>Monthly Fee</th>
+      </tr>
+
+      <tr>
+        <td>Course / Class 1</td>
+        <td>₹ —</td>
+        <td>₹ —</td>
+      </tr>
+
+      <tr>
+        <td>Course / Class 2</td>
+        <td>₹ —</td>
+        <td>₹ —</td>
+      </tr>
+
+      <tr>
+        <td>Course / Class 3</td>
+        <td>₹ —</td>
+        <td>₹ —</td>
+      </tr>
+    </table>
+  </div>
+</section>
+
+<section id="admission" class="section">
+  <h2>📝 Admission Form</h2>
+  <p>Fill the form for admission</p>
+
+  <form id="admissionForm" class="card">
+
+    <input type="text" placeholder="Student Name" required>
+
+    <input type="text" placeholder="Father / Guardian Name" required>
+
+    <input type="date" required>
+
+    <input type="text" placeholder="Class / Course" required>
+
+    <input type="tel" placeholder="Mobile Number" required>
+
+    <input type="email" placeholder="Email">
+
+    <textarea placeholder="Full Address" rows="4" required></textarea>
+
+    <button type="submit">Submit Admission Form</button>
+
+    <div id="formMessage"></div>
+
+  </form>
+</section>
+
+<section id="courses" class="section light">
+  <h2>📚 Courses</h2>
+  <p>Our Courses & Classes</p>
+
+  <div class="courses">
+
+    <div>
+      <b>📖</b>
+      <h3>Course / Class 1</h3>
+      <p>Course information will be added here.</p>
+    </div>
+
+    <div>
+      <b>📚</b>
+      <h3>Course / Class 2</h3>
+      <p>Course information will be added here.</p>
+    </div>
+
+    <div>
+      <b>🎓</b>
+      <h3>Course / Class 3</h3>
+      <p>Course information will be added here.</p>
+    </div>
+
+  </div>
+</section>
+
+<section id="contact" class="section">
+  <h2>📞 Contact Us</h2>
+  <p>Contact our school</p>
+
+  <div class="contact">
+
+    <div>
+      <b>📍</b>
+      <h3>Address</h3>
+      <p>School address will be added here.</p>
+    </div>
+
+    <div>
+      <b>📞</b>
+      <h3>Phone</h3>
+      <p>+91 XXXXX XXXXX</p>
+    </div>
+
+    <div>
+      <b>✉️</b>
+      <h3>Email</h3>
+      <p>school@example.com</p>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <img src="logo.jpg" alt="School Logo">
+  <h3>AL-JAMIATUL ISMAILIYA LILBANAT</h3>
+  <p>© 2026 All Rights Reserved</p>
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
